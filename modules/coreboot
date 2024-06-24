@@ -94,6 +94,11 @@ coreboot-dasharo_commit_hash := 3a9aa3a4692f3dd49732f5b4e3ec54be385f0969
 coreboot-dasharo_patch_version := unreleased
 $(eval $(call coreboot_module,dasharo,))
 
+# MSI Z790P with modified mainline coreboot
+coreboot-main_repo := https://github.com/KurtFuchs/coreboot
+coreboot-main_commit_hash := main
+$(eval $(call coreboot_module,main,))
+
 # Check that the board configured the coreboot version correctly
 ifeq "$(CONFIG_COREBOOT_VERSION)" ""
 	$(error "$(BOARD): does not specify coreboot version under CONFIG_COREBOOT_VERSION")
