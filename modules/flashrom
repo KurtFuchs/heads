@@ -6,7 +6,7 @@ flashrom_version := Alder_Lake
 flashrom_dir := flashrom-$(flashrom_version)
 flashrom_tar := $(flashrom_dir).tar.gz
 flashrom_url := https://github.com/KurtFuchs/flashrom/archive/$(flashrom_version).tar.gz
-flashrom_hash := e45a67ae56c7905c35af6b69847d618149ebdc6dc6eb7bdcf57a4a0aa14e68ce
+flashrom_hash := 37ad6cb26febfcb8270a8978cda9baac17192db17c435adc78185bf09f4fd9ee
 
 # Default options for flashrom
 flashrom_cfg := \
