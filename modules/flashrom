@@ -2,11 +2,11 @@ modules-$(CONFIG_FLASHROM) += flashrom
 
 flashrom_depends := pciutils $(musl_dep)
 
-flashrom_version := Alder_Lake
+flashrom_version := 62fcfcce44008682d0210388111aac3f8894fdb8
 flashrom_dir := flashrom-$(flashrom_version)
 flashrom_tar := $(flashrom_dir).tar.gz
 flashrom_url := https://github.com/KurtFuchs/flashrom/archive/$(flashrom_version).tar.gz
-flashrom_hash := 37ad6cb26febfcb8270a8978cda9baac17192db17c435adc78185bf09f4fd9ee
+flashrom_hash := f924531cc7cae87b6f08d29c6c323d515fb3f2f5880357d540d381d0457da932
 
 # Default options for flashrom
 flashrom_cfg := \
