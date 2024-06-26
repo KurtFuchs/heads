@@ -2,11 +2,11 @@ modules-$(CONFIG_FLASHROM) += flashrom
 
 flashrom_depends := pciutils $(musl_dep)
 
-flashrom_version := 62fcfcce44008682d0210388111aac3f8894fdb8
+flashrom_version := 24b8fcfccef31fbb95bc1dd308180f57d5cdb64c
 flashrom_dir := flashrom-$(flashrom_version)
 flashrom_tar := $(flashrom_dir).tar.gz
-flashrom_url := https://github.com/KurtFuchs/flashrom/archive/$(flashrom_version).tar.gz
-flashrom_hash := f924531cc7cae87b6f08d29c6c323d515fb3f2f5880357d540d381d0457da932
+flashrom_url := https://github.com/Dasharo/flashrom/archive/$(flashrom_version).tar.gz
+flashrom_hash := caf756af8177bb3eedff33071a089b8db0b1da82adb0260a90217e06fcf9844b
 
 # Default options for flashrom
 flashrom_cfg := \
