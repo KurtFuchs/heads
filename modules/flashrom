@@ -6,7 +6,7 @@ flashrom_version := raptor_lake
 flashrom_dir := flashrom-$(flashrom_version)
 flashrom_tar := $(flashrom_dir).tar.gz
 flashrom_url := https://github.com/KurtFuchs/flashrom/archive/$(flashrom_version).tar.gz
-flashrom_hash := 4ca537b29e95fa90e2a17b8e11667a49b1a08fc3629f2b30f28b6b02a7bf02b1
+flashrom_hash := 0bbd78dc68131ba65159c5d2ee3d1da775c09436ec372d03d9e664b5e63483b5
 
 # Default options for flashrom
 flashrom_cfg := \
