@@ -95,7 +95,7 @@ coreboot-dasharo_patch_version := unreleased
 $(eval $(call coreboot_module,dasharo,))
 
 # MSI Z790P with modified mainline coreboot
-coreboot-main_repo := https://github.com/KurtFuchs/coreboot
+coreboot-main_repo := https://github.com/KurtFuchs/coreboot-heads
 coreboot-main_commit_hash := main
 $(eval $(call coreboot_module,main,))
 
