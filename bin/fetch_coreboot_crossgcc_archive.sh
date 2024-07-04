@@ -109,8 +109,8 @@ case "$PKG_NAME" in
 		# Version 20220331 (currently used by talos_2) isn't there, but
 		# there is an old link from Intel that is still up.  This is
 		# specific to this release.
-		if [ "$PKG_BASENAME" = acpica-unix-20240321.tar.gz ]; then
-			PKG_BASEURL="https://downloadmirror.intel.com/819451/"
+		if [ "$PKG_BASENAME" = acpica-unix-20230628.tar.gz ]; then
+			PKG_BASEURL="https://downloadmirror.intel.com/783534"
 		fi
 		;;
 esac
