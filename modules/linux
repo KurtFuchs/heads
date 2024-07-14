@@ -34,12 +34,12 @@ linux_hash := 3991a9e16a187d78d5f414d89236ae5d7f404a69e60c4c42a9d262ee19612ef4
 else ifeq "$(CONFIG_LINUX_VERSION)" "6.1.8"
 linux_version := 6.1.8
 linux_hash := b60bb53ab8ba370a270454b11e93d41af29126fc72bd6ede517673e2e57b816d
-else ifeq "$(CONFIG_LINUX_VERSION)" "6.9.7"
-linux_version := 6.9.7
-linux_hash := e4f588cd91eef9d461e5e14fdf9415feff8a72fbcc274089a0f768a58de001f8
+else ifeq "$(CONFIG_LINUX_VERSION)" "6.9.9"
+linux_version := 6.9.9
+linux_hash := 2be05b487eb239a3bf687d628a8f104177d09c310f00bcc2a5e50f1733421eb9
 else
 $(error "$(BOARD): does not specify linux kernel version under CONFIG_LINUX_VERSION")
-endif 
+endif
 
 linux_base_dir := linux-$(linux_version)
 
@@ -224,7 +224,7 @@ $(build)/$(BOARD)/$(LINUX_IMAGE_FILE).bundled: \
 
 # modify_and_save_defconfig_in_place target allows us edit current in tree config
 # under linux decompressed+patched directory through menuconfig
-# and put it back in git tree to check changes with git difftool iteratively 
+# and put it back in git tree to check changes with git difftool iteratively
 linux.modify_and_save_defconfig_in_place:
 	cp "$(pwd)/$(linux_kconfig)" "$(build)/$(linux_dir)/.config" && \
 	$(MAKE) \
@@ -307,7 +307,7 @@ linux.save_in_versioned_oldconfig:
 # Then bump board config's CONFIG_LINUX_VERSION. build as usual to extract new linux tarball.
 # Then call make BOARD=xyz linux.prompt_for_new_config_options_for_kernel_version_bump
 #The following ask new config choice for all new symbols that should be evaluated prior of creating PR
-# Tip: Open a browser at https://www.kernelconfig.io/index.html 
+# Tip: Open a browser at https://www.kernelconfig.io/index.html
 linux.prompt_for_new_config_options_for_kernel_version_bump:
 	mkdir -p "$(build)/$(linux_dir)" \
 	&& cp "$(pwd)/$(linux_kconfig)" "$(build)/$(linux_dir)/.config" \
