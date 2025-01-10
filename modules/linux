@@ -54,7 +54,8 @@ linux_dir := $(linux_base_dir)/$(notdir $(basename $(linux_kconfig)))
 
 linux_tar := linux-$(linux_version).tar.xz
 linux_major_ver := $(basename $(basename $(CONFIG_LINUX_VERSION)))
-linux_url := https://cdn.kernel.org/pub/linux/kernel/v$(linux_major_ver).x/$(linux_tar)
+#linux_url := https://cdn.kernel.org/pub/linux/kernel/v$(linux_major_ver).x/$(linux_tar)
+linux_url := https://git.kernel.org/torvalds/t/$(linux_tar)
 
 # Ensure that touching the config file will force a reconfig/rebuild
 $(build)/$(linux_dir)/.configured: $(linux_kconfig)
