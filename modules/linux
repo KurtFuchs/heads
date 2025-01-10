@@ -52,7 +52,7 @@ linux_kconfig := $(or $(CONFIG_LINUX_CONFIG),config/linux.config)
 # configuration file name, not the board name
 linux_dir := $(linux_base_dir)/$(notdir $(basename $(linux_kconfig)))
 
-linux_tar := linux-$(linux_version).tar.xz
+linux_tar := linux-$(linux_version).tar.gz
 linux_major_ver := $(basename $(basename $(CONFIG_LINUX_VERSION)))
 #linux_url := https://cdn.kernel.org/pub/linux/kernel/v$(linux_major_ver).x/$(linux_tar)
 linux_url := https://git.kernel.org/torvalds/t/$(linux_tar)
