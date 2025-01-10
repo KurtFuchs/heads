@@ -110,7 +110,7 @@ case "$PKG_NAME" in
 		# there is an old link from Intel that is still up.  This is
 		# specific to this release.
 		if [ "$PKG_BASENAME" = acpica-unix-20241212.tar.gz ]; then
-			PKG_BASEURL="https://downloadmirror.intel.com/776303/"
+			PKG_BASEURL="https://github.com/acpica/acpica/releases/download/R2024_12_12/"
 		fi
 		;;
 esac
