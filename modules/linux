@@ -23,9 +23,9 @@ else ifeq "$(CONFIG_LINUX_VERSION)" "6.6.16-openpower"
 linux_version := 6.6.16
 linux_patch_version := 6.6.16-openpower
 linux_hash := b21d5795a3bead4f112916423222faa8a0f519e4201df343e3eb88dc9e4aaa30
-else ifeq "$(CONFIG_LINUX_VERSION)" "6.13-rc6"
-linux_version := 6.13-rc6
-linux_hash := 72ea3f321bf17e34ff01cfc3562ea8164b19b343805d52b4d84cbdb4b3114d7f
+else ifeq "$(CONFIG_LINUX_VERSION)" "6.13"
+linux_version := 6.13
+linux_hash := e79dcc6eb86695c6babfb07c2861912b635d5075c6cd1cd0567d1ea155f80d6e
 #
 # linuxboot systems should *NOT* use 5.10.5 until a proper review has
 # been done. This is because `0000-efi_bds.patch` did not cleanly port
@@ -53,8 +53,7 @@ linux_dir := $(linux_base_dir)/$(notdir $(basename $(linux_kconfig)))
 
 linux_tar := linux-$(linux_version).tar.gz
 linux_major_ver := $(basename $(basename $(CONFIG_LINUX_VERSION)))
-#linux_url := https://cdn.kernel.org/pub/linux/kernel/v$(linux_major_ver).x/$(linux_tar)
-linux_url := https://git.kernel.org/torvalds/t/$(linux_tar)
+linux_url := https://cdn.kernel.org/pub/linux/kernel/v$(linux_major_ver).x/$(linux_tar)
 
 # Ensure that touching the config file will force a reconfig/rebuild
 $(build)/$(linux_dir)/.configured: $(linux_kconfig)
