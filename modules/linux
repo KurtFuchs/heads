@@ -25,7 +25,7 @@ linux_patch_version := 6.6.16-openpower
 linux_hash := b21d5795a3bead4f112916423222faa8a0f519e4201df343e3eb88dc9e4aaa30
 else ifeq "$(CONFIG_LINUX_VERSION)" "6.13.5"
 linux_version := 6.13.5
-linux_hash := 283ecb0784f3fbc16dd822fb1d9642e230ec7515ed33f120e551b839f355e6e2
+linux_hash := 4792c858573d58e4c63d2535b1dc782223ae245e86fa9e87d6625c260fbaa949
 #
 # linuxboot systems should *NOT* use 5.10.5 until a proper review has
 # been done. This is because `0000-efi_bds.patch` did not cleanly port
