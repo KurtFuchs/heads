@@ -88,7 +88,7 @@ $(eval $(call coreboot_module,talos_2,))
 
 # custom coreboot fork with Fujtsu D756 support
 coreboot-main_repo := https://github.com/KurtFuchs/coreboot.git
-coreboot-main_commit_hash := main
+coreboot-main_commit_hash := 77880c4bedc2d27452769f15cee7e3d13fe05e14
 $(eval $(call coreboot_module,main,))
 
 coreboot-purism_repo := https://source.puri.sm/firmware/coreboot.git
