@@ -1,10 +1,10 @@
 modules-$(CONFIG_LVM2) += lvm2
 
-lvm2_version := 2.03.31
+lvm2_version := 2.03.23
 lvm2_dir := lvm2.$(lvm2_version)
 lvm2_tar := LVM2.$(lvm2_version).tgz
 lvm2_url := https://mirrors.kernel.org/sourceware/lvm2/$(lvm2_tar)
-lvm2_hash := 5db2956a00fbf87d92274cccc92436387ec0c3faadece7413ece1ba1c10c98ff
+lvm2_hash := 74e794a9e9dee1bcf8a2065f65b9196c44fdf321e22d63b98ed7de8c9aa17a5d
 
 # cross compiling test assumes malloc/realloc aren't glibc compat
 # so we force it via the configure cache.
