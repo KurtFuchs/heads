@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Extract the Docker image version from the CircleCI config file
-DOCKER_IMAGE=$(grep -oP '^\s*-?\s*image:\s*\K(tlaurion/heads-dev-env:[^\s]+)' .circleci/config.yml | head -n 1)
+DOCKER_IMAGE=$(grep -oP '^\s*-?\s*image:\s*\K(docker.io/tlaurion/heads-dev-env:[^\s]+)' .circleci/config.yml | head -n 1)
 
 # Check if the Docker image was found
 if [ -z "$DOCKER_IMAGE" ]; then
@@ -59,8 +59,8 @@ echo
 # Execute the docker run command with the provided parameters
 if [ -d "/dev/bus/usb" ]; then
 	echo "--->Launching container with access to host's USB buses (some USB devices were connected to host)..."
-	docker run --device=/dev/bus/usb:/dev/bus/usb -e DISPLAY=$DISPLAY --network host --rm -ti -v $(pwd):$(pwd) -w $(pwd) $DOCKER_IMAGE -- "$@"
+	podman run --device=/dev/bus/usb:/dev/bus/usb -e DISPLAY=$DISPLAY --network host --rm --userns=keep-id -ti -v $(pwd):$(pwd) -w $(pwd) $DOCKER_IMAGE -- "$@"
 else
 	echo "--->Launching container without access to host's USB buses (no USB devices was connected to host)..."
-	docker run -e DISPLAY=$DISPLAY --network host --rm -ti -v $(pwd):$(pwd) -w $(pwd) $DOCKER_IMAGE -- "$@"
+	podman run -e DISPLAY=$DISPLAY --network host --rm --userns=keep-id -ti -v $(pwd):$(pwd) -w $(pwd) $DOCKER_IMAGE -- "$@"
 fi
